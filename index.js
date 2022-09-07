@@ -20,6 +20,9 @@ app.post('/', (req, res) => {
 
    //check if the book title missing
    if (bookData.book == null) {
+       return res.status(400).json({error: true, msg: 'Invalid parameters'})
+   }
+   if (bookData.book.trim() == "") {
        return res.status(400).json({error: true, msg: 'Book data missing'})
    }
    
@@ -172,6 +175,9 @@ const checkDuplicateBookData = (Olddata, inputData) =>{
 
 /* util functions ends */
 
+app.all('*', (req, res) => {
+   res.status(404).send({"error": "Page not found"})
+})
 
 var server = app.listen(8081, function () {
    var host = server.address().address

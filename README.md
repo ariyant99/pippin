@@ -6,3 +6,8 @@ To run the node application follow the below stpes
 3.  npm install
 4.  npm start
 5.  test node server by hitting http://localhost:8081/
+
+
+Postman API Documentation:
+
+https://documenter.getpostman.com/view/20229906/VVBTWTYb
